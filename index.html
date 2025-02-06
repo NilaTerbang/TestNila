@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Order</title>
+</head>
+<body>
+
+    <button id="whatsapp-button">Test Ikan Nila</button>
+
+    <script>
+        document.getElementById("whatsapp-button").addEventListener("click", function() {
+            // WhatsApp number
+            const phoneNumber = "+628999428899";
+            
+            // Pre-filled message
+            const message = "Saya mau beli ikan nila nya 500gram 1 biji";
+            
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // WhatsApp URL
+            const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+            
+            // Redirect user to WhatsApp
+            window.location.href = whatsappURL;
+        });
+    </script>
+
+</body>
+</html>

@@ -4,6 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WhatsApp Order</title>
+    <style>
+        /* Styling tombol agar besar dan nyaman untuk ditekan */
+        #whatsapp-button {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: #25D366; /* Warna hijau khas WhatsApp */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            margin: 20px auto; /* Tengah di layar */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #whatsapp-button:hover {
+            background-color: #1ebe5d;
+        }
+    </style>
 </head>
 <body>
 
@@ -11,19 +34,19 @@
 
     <script>
         document.getElementById("whatsapp-button").addEventListener("click", function() {
-            // WhatsApp number
+            // Nomor WhatsApp tujuan
             const phoneNumber = "+628999428899";
             
-            // Pre-filled message
-            const message = "Saya mau beli ikan nila nya 500gram 1 biji";
+            // Pesan yang sudah diisi otomatis
+            const message = "Permisi Ce pesan Ayam 500 Gram, Harga 100K. Jumlah Pesanan: 1 Ekor";
             
-            // Encode message for URL
+            // Encode pesan untuk URL
             const encodedMessage = encodeURIComponent(message);
             
-            // WhatsApp URL
+            // Buat URL WhatsApp
             const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
             
-            // Redirect user to WhatsApp
+            // Arahkan user ke WhatsApp
             window.location.href = whatsappURL;
         });
     </script>
